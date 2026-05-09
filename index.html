@@ -328,6 +328,199 @@ body{font-family:'Nunito',sans-serif;background:#c8cfe8;min-height:100vh;min-hei
 .muted{color:var(--muted);}
 .poppins{font-family:'Poppins',sans-serif;}
 
+/* ══════════════════════════════════════════════════
+   SCR-001 LOGIN — ENHANCED UI
+══════════════════════════════════════════════════ */
+#scr-001 .scrl-white{background:#f5f7ff;}
+
+/* Hero */
+#scr-001 .login-hero{
+  position:relative;
+  background:linear-gradient(155deg,#060d2e 0%,#0d1f5c 50%,#1a2a8c 100%);
+  padding:46px 28px 48px;
+  overflow:hidden;
+  flex-shrink:0;
+  text-align:center;
+}
+#scr-001 .login-hero::before{
+  content:'';position:absolute;
+  top:-60px;right:-60px;width:240px;height:240px;
+  background:radial-gradient(circle,rgba(192,32,26,0.18) 0%,transparent 70%);
+  border-radius:50%;pointer-events:none;
+}
+#scr-001 .login-hero::after{
+  content:'';position:absolute;
+  bottom:-80px;left:-50px;width:220px;height:220px;
+  background:radial-gradient(circle,rgba(255,255,255,0.05) 0%,transparent 70%);
+  border-radius:50%;pointer-events:none;
+}
+#scr-001 .login-globe-btn{
+  position:absolute;top:46px;right:20px;
+  width:38px;height:38px;border-radius:50%;
+  background:rgba(255,255,255,0.12);
+  border:1.5px solid rgba(255,255,255,0.2);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;z-index:10;transition:background 0.2s;
+}
+@media(min-width:500px){#scr-001 .login-globe-btn{top:14px;}}
+#scr-001 .login-globe-btn:active{background:rgba(255,255,255,0.28);}
+#scr-001 .login-globe-btn svg{width:18px;height:18px;stroke:white;}
+#scr-001 .login-logo-block{
+  display:flex;flex-direction:column;align-items:center;
+  position:relative;z-index:2;margin-top:8px;
+}
+#scr-001 .login-logo-card{
+  background:white;border-radius:20px;
+  padding:12px 28px 10px;
+  display:inline-flex;align-items:center;gap:6px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.28),0 2px 8px rgba(192,32,26,0.15);
+  margin-bottom:20px;
+}
+#scr-001 .login-logo-text{
+  font-family:'Poppins',sans-serif;
+  font-size:30px;font-weight:900;
+  color:#0d1f5c;letter-spacing:-1px;
+}
+#scr-001 .login-logo-text span{color:#c0201a;}
+#scr-001 .login-logo-dot{
+  width:9px;height:9px;background:#c0201a;
+  border-radius:50%;margin-bottom:16px;
+}
+#scr-001 .login-icon-row{
+  display:flex;gap:12px;justify-content:center;
+  margin-bottom:12px;position:relative;z-index:2;
+}
+#scr-001 .login-icon-pill{
+  width:46px;height:46px;border-radius:50%;
+  background:rgba(255,255,255,0.08);
+  border:1.5px solid rgba(255,255,255,0.18);
+  display:flex;align-items:center;justify-content:center;
+  font-size:19px;
+  -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);
+  box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+#scr-001 .login-hero-tag{
+  position:relative;z-index:2;
+  color:rgba(255,255,255,0.55);
+  font-size:10px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+}
+#scr-001 .login-wave{
+  position:absolute;bottom:0;left:0;right:0;
+  height:28px;overflow:hidden;pointer-events:none;
+}
+#scr-001 .login-wave svg{display:block;width:100%;height:100%;}
+
+/* Form body */
+#scr-001 .login-form-body{
+  background:#f5f7ff;
+  padding:28px 24px 32px;
+  flex:1;
+}
+#scr-001 .login-form-title{
+  font-family:'Poppins',sans-serif;
+  font-size:22px;font-weight:800;color:var(--text);line-height:1.2;
+}
+#scr-001 .login-form-sub{
+  font-size:12px;color:var(--muted);font-weight:600;
+  margin-top:4px;margin-bottom:24px;line-height:1.5;
+}
+
+/* Inputs */
+#scr-001 .login-inp-wrap{position:relative;}
+#scr-001 .login-inp-icon{
+  position:absolute;left:14px;top:50%;transform:translateY(-50%);
+  font-size:16px;pointer-events:none;
+}
+#scr-001 .login-inp{
+  width:100%;
+  border:1.5px solid #dde3f0;border-radius:14px;
+  padding:14px 44px 14px 42px;
+  font-size:15px;font-family:'Nunito',sans-serif;font-weight:700;
+  outline:none;color:var(--text);background:white;
+  box-shadow:0 2px 8px rgba(13,31,92,0.06);
+  transition:border-color 0.2s,box-shadow 0.2s;
+  -webkit-appearance:none;appearance:none;
+}
+#scr-001 .login-inp:focus{
+  border-color:var(--navy);
+  box-shadow:0 0 0 3px rgba(13,31,92,0.08),0 2px 8px rgba(13,31,92,0.08);
+}
+#scr-001 .login-inp-action{
+  position:absolute;right:14px;top:50%;transform:translateY(-50%);
+  font-size:17px;cursor:pointer;display:flex;align-items:center;
+}
+#scr-001 .login-pw-row{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:7px;
+}
+#scr-001 .login-forgot{
+  font-size:11px;color:var(--red);font-weight:700;cursor:pointer;
+}
+#scr-001 .login-lang-row{
+  display:flex;justify-content:flex-end;margin-bottom:22px;
+}
+#scr-001 .login-lang-toggle{
+  display:flex;background:#e8ebf7;border-radius:10px;padding:3px;
+}
+#scr-001 .login-lang-pill{
+  padding:5px 14px;border-radius:8px;
+  font-size:11px;font-weight:800;cursor:pointer;
+  color:var(--muted);transition:all 0.2s;
+  font-family:'Poppins',sans-serif;
+}
+#scr-001 .login-lang-pill.active{
+  background:var(--navy);color:white;
+  box-shadow:0 2px 8px rgba(13,31,92,0.2);
+}
+
+/* Sign in button */
+#scr-001 .login-btn{
+  width:100%;
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy3) 100%);
+  color:white;border:none;border-radius:16px;
+  padding:16px 20px;
+  font-size:15px;font-weight:800;font-family:'Poppins',sans-serif;
+  cursor:pointer;letter-spacing:0.3px;min-height:54px;
+  box-shadow:0 8px 24px rgba(13,31,92,0.28);
+  transition:all 0.2s;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+#scr-001 .login-btn:active{transform:scale(0.98);box-shadow:0 4px 12px rgba(13,31,92,0.2);}
+
+/* OR divider */
+#scr-001 .login-or-divider{
+  display:flex;align-items:center;gap:12px;
+  margin:20px 0 16px;
+}
+#scr-001 .login-or-line{flex:1;height:1.5px;background:#dde3f0;}
+#scr-001 .login-or-text{
+  font-size:11px;font-weight:800;color:var(--muted);letter-spacing:0.5px;
+}
+
+/* Biometric */
+#scr-001 .login-bio-block{
+  display:flex;flex-direction:column;align-items:center;
+  gap:8px;cursor:pointer;padding:8px 0;
+}
+#scr-001 .login-bio-circle{
+  width:64px;height:64px;border-radius:50%;
+  border:2px solid #dde3f0;background:white;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 16px rgba(13,31,92,0.1);
+  transition:all 0.2s;
+}
+#scr-001 .login-bio-block:active .login-bio-circle{
+  border-color:var(--navy);background:#f0f3ff;transform:scale(0.95);
+}
+#scr-001 .login-bio-label{
+  font-size:12px;font-weight:700;color:var(--navy);
+}
+#scr-001 .login-register-row{
+  text-align:center;margin-top:22px;
+  font-size:13px;color:var(--muted);font-weight:600;
+}
+
 
 /* ══════════════════════════════════════════════════════
    RTL / LTR SUPPORT
@@ -623,62 +816,97 @@ html[dir="rtl"] .out-ban { direction: rtl; }
   </div>
 
   <!-- ═══════════════════════════════════════════════ -->
-  <!-- SCR-001: LOGIN -->
+  <!-- SCR-001: LOGIN — ENHANCED UI                   -->
   <!-- ═══════════════════════════════════════════════ -->
   <div class="screen active" id="scr-001">
     <div class="scrl-white">
-      <div style="background:linear-gradient(155deg,#080f35 0%,#0d1f5c 55%,#1a2a8c 100%);padding:52px 24px 36px;text-align:center;position:relative;overflow:hidden;">
-        <div style="position:absolute;top:-50px;right:-50px;width:220px;height:220px;background:rgba(192,32,26,0.12);border-radius:50%;"></div>
-        <div style="position:absolute;bottom:-80px;left:-40px;width:200px;height:200px;background:rgba(255,255,255,0.04);border-radius:50%;"></div>
-        <div style="background:white;border-radius:22px;padding:14px 32px;display:inline-block;margin-bottom:18px;box-shadow:0 8px 30px rgba(0,0,0,0.3);">
-          <div style="display:flex;align-items:center;gap:6px;">
-            <span style="font-family:'Poppins',sans-serif;font-size:28px;font-weight:900;color:#0d1f5c;letter-spacing:-1px;">al<span style="color:#c0201a;">ru</span>ya</span>
-            <div style="width:8px;height:8px;background:#c0201a;border-radius:50%;margin-bottom:14px;"></div>
-          </div>
-        </div>
-        <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;">
-          <div style="width:50px;height:50px;border-radius:50%;background:white;border:2.5px solid #c0201a;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 4px 14px rgba(192,32,26,0.25);">🧮</div>
-          <div style="width:50px;height:50px;border-radius:50%;background:white;border:2.5px solid #c0201a;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 4px 14px rgba(192,32,26,0.25);">🎓</div>
-          <div style="width:50px;height:50px;border-radius:50%;background:white;border:2.5px solid #c0201a;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 4px 14px rgba(192,32,26,0.25);">✏️</div>
-          <div style="width:50px;height:50px;border-radius:50%;background:white;border:2.5px solid #c0201a;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 4px 14px rgba(192,32,26,0.25);">💡</div>
-          <div style="width:50px;height:50px;border-radius:50%;background:white;border:2.5px solid #c0201a;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 4px 14px rgba(192,32,26,0.25);">📊</div>
-        </div>
-        <div style="color:rgba(255,255,255,0.65);font-size:12px;font-weight:600;letter-spacing:0.5px;margin-top:6px;"><span data-i18n="sms">SCHOOL MANAGEMENT SYSTEM</span></div>
-        <button class="globe-btn" onclick="openLangModal()" style="position:absolute;top:14px;right:14px;" title="Language">
+
+      <!-- HERO -->
+      <div class="login-hero">
+        <!-- Globe / Language button -->
+        <button class="login-globe-btn" onclick="openLangModal()" title="Language">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
             <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
           </svg>
         </button>
+
+        <!-- Logo -->
+        <div class="login-logo-block">
+          <div class="login-logo-card">
+            <span class="login-logo-text">al<span>ru</span>ya</span>
+            <div class="login-logo-dot"></div>
+          </div>
+          <!-- Icon row -->
+          <div class="login-icon-row">
+            <div class="login-icon-pill">🧮</div>
+            <div class="login-icon-pill">🎓</div>
+            <div class="login-icon-pill">✏️</div>
+            <div class="login-icon-pill">💡</div>
+            <div class="login-icon-pill">📊</div>
+          </div>
+          <div class="login-hero-tag"><span data-i18n="sms">SCHOOL MANAGEMENT SYSTEM</span></div>
+        </div>
+
+        <!-- Wave divider -->
+        <div class="login-wave">
+          <svg viewBox="0 0 390 28" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,28 L0,14 Q97.5,0 195,14 Q292.5,28 390,14 L390,28 Z" fill="#f5f7ff"/>
+          </svg>
+        </div>
       </div>
-      <div style="padding:28px 22px;">
-        <div style="font-size:22px;font-weight:900;color:var(--text);margin-bottom:4px;font-family:'Poppins',sans-serif;"><span data-i18n="welcome_back">Welcome Back</span></div>
-        <div style="font-size:13px;color:var(--muted);margin-bottom:22px;font-weight:600;"><span data-i18n="sign_in_sub">Sign in to manage your children's education</span></div>
+
+      <!-- FORM BODY -->
+      <div class="login-form-body">
+        <div class="login-form-title"><span data-i18n="welcome_back">Welcome Back</span></div>
+        <div class="login-form-sub"><span data-i18n="sign_in_sub">Sign in to manage your children's education</span></div>
+
+        <!-- Username -->
         <div class="ig">
           <div class="lbl"><span data-i18n="username_lbl">USERNAME / MOBILE / CIVIL ID</span></div>
-          <div style="position:relative;">
-            <input class="inp" type="text" placeholder="Enter your credentials" data-i18n-ph="enter_creds" value="mohammed.ahmed">
-            <span style="position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:18px;">👤</span>
+          <div class="login-inp-wrap">
+            <span class="login-inp-icon">👤</span>
+            <input class="login-inp" type="text" placeholder="Enter your credentials" data-i18n-ph="enter_creds" value="mohammed.ahmed">
           </div>
         </div>
-        <div class="ig">
-          <div class="lbl">PASSWORD</div>
-          <div style="position:relative;">
-            <input class="inp" type="password" placeholder="••••••••" value="password123">
-            <span style="position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:18px;cursor:pointer;">👁️</span>
+
+        <!-- Password -->
+        <div class="ig" style="margin-bottom:10px;">
+          <div class="login-pw-row">
+            <div class="lbl" style="margin-bottom:0;">PASSWORD</div>
+            <span class="login-forgot"><span data-i18n="forgot_pw">Forgot Password?</span></span>
+          </div>
+          <div class="login-inp-wrap">
+            <span class="login-inp-icon">🔒</span>
+            <input class="login-inp" type="password" id="loginPwInp" placeholder="••••••••" value="password123">
+            <span class="login-inp-action" onclick="(function(){var i=document.getElementById('loginPwInp');i.type=i.type==='password'?'text':'password';})()">👁️</span>
           </div>
         </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;">
-          <div style="font-size:12px;color:var(--red);cursor:pointer;font-weight:700;"><span data-i18n="forgot_pw">Forgot Password?</span></div>
-          <div style="display:flex;gap:7px;">
-            <div style="font-size:11px;padding:5px 12px;border-radius:8px;background:var(--navy);color:white;cursor:pointer;font-weight:700;">EN</div>
-            <div style="font-size:11px;padding:5px 12px;border-radius:8px;border:1.5px solid var(--border);cursor:pointer;font-weight:700;">AR</div>
+
+        <!-- EN / AR toggle -->
+        <div class="login-lang-row">
+          <div class="login-lang-toggle">
+            <div class="login-lang-pill active" id="loginLpEn" onclick="setLang('en')">EN</div>
+            <div class="login-lang-pill" id="loginLpAr" onclick="setLang('ar')">AR</div>
           </div>
         </div>
-        <button class="btn" onclick="showLoading('scr-005')"><span data-i18n="sign_in">Sign In</span></button>
-        <div style="text-align:center;margin-top:24px;">
-          <div style="font-size:11px;color:var(--muted);font-weight:700;margin-bottom:12px;letter-spacing:0.5px;"><span data-i18n="biometrics">OR USE BIOMETRICS</span></div>
-          <div style="cursor:pointer;display:inline-block;" onclick="doFaceId()">
+
+        <!-- Sign In button -->
+        <button class="login-btn" onclick="showLoading('scr-005')">
+          <span data-i18n="sign_in">Sign In</span>
+          <span style="font-size:18px;">→</span>
+        </button>
+
+        <!-- OR divider -->
+        <div class="login-or-divider">
+          <div class="login-or-line"></div>
+          <span class="login-or-text"><span data-i18n="biometrics">OR USE BIOMETRICS</span></span>
+          <div class="login-or-line"></div>
+        </div>
+
+        <!-- Face ID -->
+        <div class="login-bio-block" onclick="doFaceId()">
+          <div class="login-bio-circle">
             <svg class="face-id-svg" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" id="faceIdSvg">
               <path d="M8 22V8H22" stroke="#0d1f5c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M50 8H64V22" stroke="#0d1f5c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -692,11 +920,14 @@ html[dir="rtl"] .out-ban { direction: rtl; }
               <path d="M50 25C49 23 47 22 44 22" stroke="#0d1f5c" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
-          <div style="font-size:12px;color:var(--navy);font-weight:700;margin-top:6px;"><span data-i18n="face_id">Tap to use Face ID</span></div>
+          <span class="login-bio-label"><span data-i18n="face_id">Tap to use Face ID</span></span>
         </div>
-        <div style="text-align:center;margin-top:18px;font-size:13px;color:var(--muted);font-weight:600;">
+
+        <!-- Register -->
+        <div class="login-register-row">
           New user? <span style="color:var(--navy);font-weight:800;cursor:pointer;"><span data-i18n="create_acc">Create Account</span></span>
         </div>
+
       </div>
     </div>
   </div>
@@ -2517,6 +2748,10 @@ function applyLang(lang) {
   /* Update language modal selection */
   document.getElementById('lang-en') && document.getElementById('lang-en').classList.toggle('selected', lang==='en');
   document.getElementById('lang-ar') && document.getElementById('lang-ar').classList.toggle('selected', lang==='ar');
+
+  /* Sync login page EN/AR pill toggle */
+  document.getElementById('loginLpEn') && document.getElementById('loginLpEn').classList.toggle('active', lang==='en');
+  document.getElementById('loginLpAr') && document.getElementById('loginLpAr').classList.toggle('active', lang==='ar');
 
   /* Update modal title */
   var mt = document.getElementById('langModalTitle');
