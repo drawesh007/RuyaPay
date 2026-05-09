@@ -329,6 +329,79 @@ body{font-family:'Nunito',sans-serif;background:#c8cfe8;min-height:100vh;min-hei
 .poppins{font-family:'Poppins',sans-serif;}
 
 /* ══════════════════════════════════════════════════
+   SCR-000 SPLASH SCREEN
+══════════════════════════════════════════════════ */
+#scr-000{bottom:0;background:#0d1f5c;}
+.splash-root{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(155deg,#040c28 0%,#0d1f5c 55%,#1a2a8c 100%);}
+.splash-orb1{position:absolute;top:-80px;right:-80px;width:320px;height:320px;background:radial-gradient(circle,rgba(192,32,26,0.22) 0%,transparent 68%);border-radius:50%;pointer-events:none;}
+.splash-orb2{position:absolute;bottom:-100px;left:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(255,255,255,0.06) 0%,transparent 65%);border-radius:50%;pointer-events:none;}
+.splash-orb3{position:absolute;bottom:120px;right:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(192,32,26,0.1) 0%,transparent 65%);border-radius:50%;pointer-events:none;}
+.splash-ribbon{position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;}
+.splash-ribbon::before{content:'';position:absolute;top:-120px;left:-60px;width:180px;height:900px;background:rgba(255,255,255,0.03);transform:rotate(-28deg);}
+.splash-ribbon::after{content:'';position:absolute;top:-120px;left:60px;width:80px;height:900px;background:rgba(255,255,255,0.025);transform:rotate(-28deg);}
+.splash-ring{position:relative;z-index:2;display:flex;gap:14px;margin-bottom:28px;-webkit-animation:splashFadeUp 0.7s ease 0.2s both;animation:splashFadeUp 0.7s ease 0.2s both;}
+.splash-ring-pill{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:22px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:0 6px 20px rgba(0,0,0,0.2);}
+.splash-logo-wrap{position:relative;z-index:2;-webkit-animation:splashScale 0.6s cubic-bezier(0.34,1.56,0.64,1) 0s both;animation:splashScale 0.6s cubic-bezier(0.34,1.56,0.64,1) 0s both;margin-bottom:22px;}
+.splash-logo-card{background:white;border-radius:26px;padding:18px 40px 16px;display:inline-flex;align-items:center;gap:8px;box-shadow:0 16px 48px rgba(0,0,0,0.35),0 4px 12px rgba(192,32,26,0.2);}
+.splash-logo-text{font-family:'Poppins',sans-serif;font-size:38px;font-weight:900;color:#0d1f5c;letter-spacing:-1.5px;}
+.splash-logo-text span{color:#c0201a;}
+.splash-logo-dot{width:11px;height:11px;background:#c0201a;border-radius:50%;margin-bottom:20px;flex-shrink:0;}
+.splash-tagline{position:relative;z-index:2;font-size:11px;font-weight:700;color:rgba(255,255,255,0.5);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:56px;-webkit-animation:splashFadeUp 0.7s ease 0.4s both;animation:splashFadeUp 0.7s ease 0.4s both;}
+.splash-dots{position:relative;z-index:2;display:flex;gap:8px;-webkit-animation:splashFadeUp 0.6s ease 0.6s both;animation:splashFadeUp 0.6s ease 0.6s both;}
+.splash-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.25);}
+.splash-dot.active{background:white;width:22px;border-radius:4px;-webkit-animation:splashPulse 1.2s ease infinite;animation:splashPulse 1.2s ease infinite;}
+.splash-bottom{position:absolute;bottom:0;left:0;right:0;padding:18px 24px 36px;display:flex;flex-direction:column;align-items:center;gap:5px;z-index:2;-webkit-animation:splashFadeUp 0.7s ease 0.7s both;animation:splashFadeUp 0.7s ease 0.7s both;}
+.splash-version{font-size:11px;font-weight:700;color:rgba(255,255,255,0.3);letter-spacing:0.5px;}
+.splash-powered{font-size:10px;font-weight:600;color:rgba(255,255,255,0.2);}
+@-webkit-keyframes splashScale{from{opacity:0;-webkit-transform:scale(0.8);}to{opacity:1;-webkit-transform:scale(1);}}
+@keyframes splashScale{from{opacity:0;transform:scale(0.8);}to{opacity:1;transform:scale(1);}}
+@-webkit-keyframes splashFadeUp{from{opacity:0;-webkit-transform:translateY(16px);}to{opacity:1;-webkit-transform:translateY(0);}}
+@keyframes splashFadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+@-webkit-keyframes splashPulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+@keyframes splashPulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+
+/* ══════════════════════════════════════════════════
+   SCR-002 OTP VERIFICATION
+══════════════════════════════════════════════════ */
+#scr-002{bottom:0;}
+.otp-screen{width:100%;height:100%;display:flex;flex-direction:column;background:#f5f7ff;overflow-y:auto;overflow-x:hidden;scrollbar-width:none;}
+.otp-screen::-webkit-scrollbar{display:none;}
+.otp-hero{position:relative;background:linear-gradient(155deg,#060d2e 0%,#0d1f5c 50%,#1a2a8c 100%);padding:42px 28px 52px;overflow:hidden;flex-shrink:0;text-align:center;}
+.otp-hero::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:radial-gradient(circle,rgba(192,32,26,0.16) 0%,transparent 70%);border-radius:50%;pointer-events:none;}
+.otp-hero::after{content:'';position:absolute;bottom:-60px;left:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(255,255,255,0.04) 0%,transparent 70%);border-radius:50%;pointer-events:none;}
+.otp-back{position:absolute;top:46px;left:18px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;color:white;font-size:20px;line-height:1;}
+@media(min-width:500px){.otp-back{top:14px;}}
+.otp-back:active{background:rgba(255,255,255,0.28);}
+.otp-shield-wrap{position:relative;z-index:2;display:inline-flex;align-items:center;justify-content:center;width:78px;height:78px;border-radius:50%;background:rgba(255,255,255,0.1);border:2px solid rgba(255,255,255,0.18);margin-bottom:16px;box-shadow:0 8px 28px rgba(0,0,0,0.2);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);}
+.otp-hero-title{position:relative;z-index:2;font-family:'Poppins',sans-serif;font-size:22px;font-weight:800;color:white;margin-bottom:8px;}
+.otp-hero-sub{position:relative;z-index:2;font-size:13px;color:rgba(255,255,255,0.6);font-weight:600;line-height:1.55;max-width:260px;margin:0 auto;}
+.otp-hero-phone{position:relative;z-index:2;margin-top:8px;font-size:14px;font-weight:800;color:rgba(255,255,255,0.85);letter-spacing:0.5px;}
+.otp-wave{position:absolute;bottom:0;left:0;right:0;height:28px;overflow:hidden;pointer-events:none;}
+.otp-wave svg{display:block;width:100%;height:100%;}
+.otp-body{background:#f5f7ff;padding:28px 24px 32px;flex:1;}
+.otp-label{font-size:12px;font-weight:800;color:var(--muted);letter-spacing:0.5px;text-transform:uppercase;text-align:center;margin-bottom:20px;}
+.otp-boxes{display:flex;gap:12px;justify-content:center;margin-bottom:8px;}
+.otp-box{width:54px;height:62px;border:2px solid #dde3f0;border-radius:16px;background:white;font-family:'Poppins',sans-serif;color:var(--navy);text-align:center;outline:none;box-shadow:0 2px 8px rgba(13,31,92,0.06);transition:border-color 0.2s,box-shadow 0.2s,transform 0.15s;caret-color:var(--navy);-webkit-appearance:none;appearance:none;font-size:24px !important;font-weight:900 !important;}
+.otp-box:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(13,31,92,0.1),0 2px 8px rgba(13,31,92,0.08);transform:translateY(-2px);}
+.otp-box.filled{border-color:var(--navy);background:#f0f3ff;}
+.otp-box.error{border-color:var(--red);background:#fff5f5;box-shadow:0 0 0 3px rgba(192,32,26,0.1);-webkit-animation:otpShake 0.4s ease;animation:otpShake 0.4s ease;}
+.otp-box.success{border-color:var(--green);background:#f0fdf4;}
+@-webkit-keyframes otpShake{0%,100%{-webkit-transform:translateX(0);}20%{-webkit-transform:translateX(-6px);}40%{-webkit-transform:translateX(6px);}60%{-webkit-transform:translateX(-4px);}80%{-webkit-transform:translateX(4px);}}
+@keyframes otpShake{0%,100%{transform:translateX(0);}20%{transform:translateX(-6px);}40%{transform:translateX(6px);}60%{transform:translateX(-4px);}80%{transform:translateX(4px);}}
+.otp-error-msg{display:none;text-align:center;font-size:12px;font-weight:700;color:var(--red);margin-top:10px;-webkit-animation:splashFadeUp 0.3s ease;animation:splashFadeUp 0.3s ease;}
+.otp-error-msg.show{display:block;}
+.otp-verify-btn{width:100%;background:linear-gradient(135deg,var(--navy) 0%,var(--navy3) 100%);color:white;border:none;border-radius:16px;padding:16px 20px;font-size:15px;font-weight:800;font-family:'Poppins',sans-serif;cursor:pointer;min-height:54px;box-shadow:0 8px 24px rgba(13,31,92,0.28);transition:all 0.2s;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:24px;}
+.otp-verify-btn:active{transform:scale(0.98);box-shadow:0 4px 12px rgba(13,31,92,0.2);}
+.otp-verify-btn:disabled{opacity:0.5;cursor:not-allowed;transform:none;}
+.otp-resend-row{text-align:center;margin-top:20px;font-size:13px;color:var(--muted);font-weight:600;}
+.otp-resend-btn{color:var(--navy);font-weight:800;cursor:pointer;background:none;border:none;font-size:13px;font-family:'Nunito',sans-serif;-webkit-tap-highlight-color:transparent;}
+.otp-resend-btn:disabled{color:var(--muted);cursor:not-allowed;}
+.otp-timer{display:inline-block;font-size:13px;font-weight:800;color:var(--red);min-width:32px;}
+.otp-security-note{display:flex;align-items:center;gap:8px;background:white;border:1.5px solid #dde3f0;border-radius:12px;padding:12px 14px;margin-top:20px;box-shadow:0 2px 8px rgba(13,31,92,0.04);}
+.otp-security-icon{font-size:16px;flex-shrink:0;}
+.otp-security-text{font-size:11px;color:var(--muted);font-weight:600;line-height:1.5;}
+
+/* ══════════════════════════════════════════════════
    SCR-001 LOGIN — ENHANCED UI
 ══════════════════════════════════════════════════ */
 #scr-001 .scrl-white{background:#f5f7ff;}
@@ -780,7 +853,9 @@ html[dir="rtl"] .out-ban { direction: rtl; }
 
 <!-- ── DESKTOP: screen navigator ──────────────────── -->
 <div class="pg-nav" id="pgNav">
-  <button class="pg-btn on" onclick="showScr('scr-001',this)">001 Login</button>
+  <button class="pg-btn on" onclick="showScr('scr-000',this)">000 Splash</button>
+  <button class="pg-btn" onclick="showScr('scr-001',this)">001 Login</button>
+  <button class="pg-btn" onclick="showScr('scr-002',this)">002 OTP</button>
   <button class="pg-btn" onclick="showScr('scr-005',this)">005 Dashboard</button>
   <button class="pg-btn" onclick="showScr('scr-006',this)">006 Home</button>
   <button class="pg-btn" onclick="showScr('scr-007',this)">007 Pay Menu</button>
@@ -813,6 +888,126 @@ html[dir="rtl"] .out-ban { direction: rtl; }
   <div class="loading" id="loadingEl">
     <div class="spin"></div>
     <div style="font-size:13px;color:var(--muted);font-family:'Nunito',sans-serif;font-weight:700;">Loading...</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- SCR-000: SPLASH SCREEN                         -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="screen active" id="scr-000">
+    <div class="splash-root">
+      <div class="splash-orb1"></div>
+      <div class="splash-orb2"></div>
+      <div class="splash-orb3"></div>
+      <div class="splash-ribbon"></div>
+
+      <!-- Icon ring -->
+      <div class="splash-ring">
+        <div class="splash-ring-pill">🧮</div>
+        <div class="splash-ring-pill">🎓</div>
+        <div class="splash-ring-pill">✏️</div>
+        <div class="splash-ring-pill">💡</div>
+        <div class="splash-ring-pill">📊</div>
+      </div>
+
+      <!-- Logo -->
+      <div class="splash-logo-wrap">
+        <div class="splash-logo-card">
+          <span class="splash-logo-text">al<span>ru</span>ya</span>
+          <div class="splash-logo-dot"></div>
+        </div>
+      </div>
+
+      <!-- Tagline -->
+      <div class="splash-tagline">School Management System</div>
+
+      <!-- Animated loading dots -->
+      <div class="splash-dots">
+        <div class="splash-dot active"></div>
+        <div class="splash-dot"></div>
+        <div class="splash-dot"></div>
+      </div>
+
+      <!-- Bottom version strip -->
+      <div class="splash-bottom">
+        <div class="splash-version">VERSION 2.0</div>
+        <div class="splash-powered">Powered by Ruya Education Group</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- SCR-002: OTP VERIFICATION                      -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="screen" id="scr-002">
+    <div class="otp-screen">
+
+      <!-- Hero -->
+      <div class="otp-hero">
+        <!-- Back button -->
+        <button class="otp-back" onclick="goTo('scr-001')" title="Back">&#8592;</button>
+
+        <!-- Shield icon -->
+        <div class="otp-shield-wrap">
+          <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 3L6 8.5V17C6 24.5 11.7 31.5 19 33.5C26.3 31.5 32 24.5 32 17V8.5L19 3Z" stroke="white" stroke-width="2.2" stroke-linejoin="round" fill="rgba(255,255,255,0.12)"/>
+            <path d="M14 19L17.5 22.5L24.5 15.5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="otp-hero-title"><span data-i18n="otp_title">OTP Verification</span></div>
+        <div class="otp-hero-sub"><span data-i18n="otp_sub">Enter the 6-digit code sent to your registered mobile number</span></div>
+        <div class="otp-hero-phone" id="otpPhone">+965 ••••• 4821</div>
+
+        <!-- Wave -->
+        <div class="otp-wave">
+          <svg viewBox="0 0 390 28" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,28 L0,14 Q97.5,0 195,14 Q292.5,28 390,14 L390,28 Z" fill="#f5f7ff"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Form body -->
+      <div class="otp-body">
+        <div class="otp-label"><span data-i18n="otp_enter">ENTER VERIFICATION CODE</span></div>
+
+        <!-- 6 OTP boxes -->
+        <div class="otp-boxes" id="otpBoxes">
+          <input class="otp-box" type="tel" maxlength="1" id="otp0" inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code" onkeyup="otpKeyUp(event,0)" oninput="otpInput(this,0)">
+          <input class="otp-box" type="tel" maxlength="1" id="otp1" inputmode="numeric" pattern="[0-9]*" onkeyup="otpKeyUp(event,1)" oninput="otpInput(this,1)">
+          <input class="otp-box" type="tel" maxlength="1" id="otp2" inputmode="numeric" pattern="[0-9]*" onkeyup="otpKeyUp(event,2)" oninput="otpInput(this,2)">
+          <input class="otp-box" type="tel" maxlength="1" id="otp3" inputmode="numeric" pattern="[0-9]*" onkeyup="otpKeyUp(event,3)" oninput="otpInput(this,3)">
+          <input class="otp-box" type="tel" maxlength="1" id="otp4" inputmode="numeric" pattern="[0-9]*" onkeyup="otpKeyUp(event,4)" oninput="otpInput(this,4)">
+          <input class="otp-box" type="tel" maxlength="1" id="otp5" inputmode="numeric" pattern="[0-9]*" onkeyup="otpKeyUp(event,5)" oninput="otpInput(this,5)">
+        </div>
+
+        <!-- Error message -->
+        <div class="otp-error-msg" id="otpErrorMsg">
+          ⚠️ <span data-i18n="otp_error">Incorrect code. Please try again.</span>
+        </div>
+
+        <!-- Verify button -->
+        <button class="otp-verify-btn" id="otpVerifyBtn" onclick="verifyOtp()" disabled>
+          <span data-i18n="otp_verify">Verify &amp; Continue</span>
+          <span style="font-size:18px;">→</span>
+        </button>
+
+        <!-- Resend row -->
+        <div class="otp-resend-row">
+          <span data-i18n="otp_no_code">Didn't receive the code?</span>&nbsp;
+          <button class="otp-resend-btn" id="otpResendBtn" onclick="resendOtp()" disabled>
+            <span data-i18n="otp_resend">Resend</span>
+          </button>
+          <span class="otp-timer" id="otpTimer">&nbsp;0:30</span>
+        </div>
+
+        <!-- Security note -->
+        <div class="otp-security-note">
+          <span class="otp-security-icon">🔒</span>
+          <div class="otp-security-text"><span data-i18n="otp_security">Never share your OTP with anyone. Ruya Schools will never ask for your verification code.</span></div>
+        </div>
+
+      </div>
+    </div>
   </div>
 
   <!-- ═══════════════════════════════════════════════ -->
@@ -892,7 +1087,7 @@ html[dir="rtl"] .out-ban { direction: rtl; }
         </div>
 
         <!-- Sign In button -->
-        <button class="login-btn" onclick="showLoading('scr-005')">
+        <button class="login-btn" onclick="showLoading('scr-002')">
           <span data-i18n="sign_in">Sign In</span>
           <span style="font-size:18px;">→</span>
         </button>
@@ -2320,7 +2515,9 @@ html[dir="rtl"] .out-ban { direction: rtl; }
 
 <script>
 const labels={
+  'scr-000':'SCR-000 — Splash',
   'scr-001':'SCR-001 — Login',
+  'scr-002':'SCR-002 — OTP Verification',
   'scr-005':'SCR-005 — Dashboard (Branches)',
   'scr-006':'SCR-006 — Home',
   'scr-007':'SCR-007 — Pay Fees Menu','scr-008':'SCR-008 — Pay Current Year',
@@ -2336,7 +2533,7 @@ const labels={
 };
 
 /* screens that should NOT show the bottom nav */
-var NO_NAV_SCREENS=['scr-001'];
+var NO_NAV_SCREENS=['scr-000','scr-001','scr-002'];
 
 /* which nav tab is active for each screen */
 var SCREEN_NAV_MAP={
@@ -2407,6 +2604,116 @@ function showLoading(next){
   el.classList.add('on');
   setTimeout(()=>{el.classList.remove('on');goTo(next);},1000);
 }
+
+/* ── SPLASH AUTO-NAVIGATE ───────────────────────── */
+(function(){
+  setTimeout(function(){
+    if(document.getElementById('scr-000').classList.contains('active')){
+      goTo('scr-001');
+    }
+  }, 2800);
+})();
+
+/* ── OTP LOGIC ──────────────────────────────────── */
+var OTP_DEMO = '123456'; /* demo code for testing */
+var otpTimerInterval = null;
+var otpSeconds = 30;
+
+function otpInput(input, idx){
+  var val = input.value.replace(/[^0-9]/g,'');
+  input.value = val;
+  input.classList.toggle('filled', val.length > 0);
+  input.classList.remove('error','success');
+  document.getElementById('otpErrorMsg').classList.remove('show');
+  /* auto-advance */
+  if(val.length === 1 && idx < 5){
+    var next = document.getElementById('otp'+(idx+1));
+    if(next) next.focus();
+  }
+  /* enable verify when all filled */
+  var allFilled = true;
+  for(var i=0;i<6;i++){
+    if(!document.getElementById('otp'+i).value) allFilled=false;
+  }
+  document.getElementById('otpVerifyBtn').disabled = !allFilled;
+}
+
+function otpKeyUp(e, idx){
+  if(e.key === 'Backspace' && !document.getElementById('otp'+idx).value && idx > 0){
+    var prev = document.getElementById('otp'+(idx-1));
+    if(prev){ prev.focus(); prev.value=''; prev.classList.remove('filled'); }
+  }
+}
+
+function verifyOtp(){
+  var code = '';
+  for(var i=0;i<6;i++) code += document.getElementById('otp'+i).value;
+  if(code === OTP_DEMO){
+    /* success */
+    for(var i=0;i<6;i++){
+      document.getElementById('otp'+i).classList.remove('error');
+      document.getElementById('otp'+i).classList.add('success');
+    }
+    document.getElementById('otpErrorMsg').classList.remove('show');
+    clearInterval(otpTimerInterval);
+    showLoading('scr-005');
+  } else {
+    /* error */
+    for(var i=0;i<6;i++){
+      document.getElementById('otp'+i).classList.add('error');
+      document.getElementById('otp'+i).classList.remove('filled','success');
+    }
+    document.getElementById('otpErrorMsg').classList.add('show');
+    /* clear boxes */
+    setTimeout(function(){
+      for(var i=0;i<6;i++){
+        document.getElementById('otp'+i).value='';
+        document.getElementById('otp'+i).classList.remove('error');
+      }
+      document.getElementById('otpVerifyBtn').disabled = true;
+      document.getElementById('otp0').focus();
+    }, 900);
+  }
+}
+
+function startOtpTimer(){
+  clearInterval(otpTimerInterval);
+  otpSeconds = 30;
+  var timerEl = document.getElementById('otpTimer');
+  var resendBtn = document.getElementById('otpResendBtn');
+  if(resendBtn) resendBtn.disabled = true;
+  if(timerEl) timerEl.textContent = '\u00a00:30';
+  otpTimerInterval = setInterval(function(){
+    otpSeconds--;
+    var m = Math.floor(otpSeconds/60);
+    var s = otpSeconds%60;
+    if(timerEl) timerEl.textContent = '\u00a0'+m+':'+(s<10?'0':'')+s;
+    if(otpSeconds <= 0){
+      clearInterval(otpTimerInterval);
+      if(timerEl) timerEl.textContent = '';
+      if(resendBtn) resendBtn.disabled = false;
+    }
+  }, 1000);
+}
+
+function resendOtp(){
+  /* reset boxes */
+  for(var i=0;i<6;i++){
+    document.getElementById('otp'+i).value='';
+    document.getElementById('otp'+i).classList.remove('filled','error','success');
+  }
+  document.getElementById('otpVerifyBtn').disabled = true;
+  document.getElementById('otpErrorMsg').classList.remove('show');
+  startOtpTimer();
+  document.getElementById('otp0').focus();
+}
+
+/* start timer when OTP screen is first shown */
+var _origGoTo = window.goTo;
+window.goTo = function(id){
+  _origGoTo(id);
+  if(id === 'scr-002') startOtpTimer();
+};
 function toggleSel(el){
   const siblings=el.parentElement.querySelectorAll('.scard');
   siblings.forEach(s=>{s.classList.remove('sel');const last=s.querySelector('div:last-child');if(last){last.textContent='›';last.style.color='';}});
@@ -2641,7 +2948,18 @@ var TRANSLATIONS = {
     select_lang:'Select Language',
 
     /* Current lang */
-    lang_display:'English'
+    lang_display:'English',
+
+    /* OTP Screen */
+    otp_title:'OTP Verification',
+    otp_sub:'Enter the 6-digit code sent to your registered mobile number',
+    otp_enter:'ENTER VERIFICATION CODE',
+    otp_verify:'Verify & Continue',
+    otp_error:'Incorrect code. Please try again.',
+    otp_no_code:"Didn't receive the code?",
+    otp_resend:'Resend',
+    otp_security:'Never share your OTP with anyone. Ruya Schools will never ask for your verification code.',
+    sms:'SCHOOL MANAGEMENT SYSTEM'
   },
 
   ar: {
@@ -2712,7 +3030,18 @@ var TRANSLATIONS = {
     select_lang:'اختر اللغة',
 
     /* Current lang */
-    lang_display:'العربية'
+    lang_display:'العربية',
+
+    /* OTP Screen */
+    otp_title:'التحقق من الرمز',
+    otp_sub:'أدخل الرمز المكون من 6 أرقام المرسل إلى رقم هاتفك المسجل',
+    otp_enter:'أدخل رمز التحقق',
+    otp_verify:'تحقق ومتابعة',
+    otp_error:'الرمز غير صحيح. حاول مرة أخرى.',
+    otp_no_code:'لم تستلم الرمز؟',
+    otp_resend:'إعادة الإرسال',
+    otp_security:'لا تشارك رمز التحقق مع أي شخص. لن تطلب رويا للمدارس رمزك أبداً.',
+    sms:'نظام إدارة المدارس'
   }
 };
 
@@ -2799,7 +3128,7 @@ function setLang(lang) {
 /* Init on load */
 document.addEventListener('DOMContentLoaded', function() {
   applyLang(currentLang);
-  if (typeof goTo === 'function') { goTo('scr-001'); }
+  if (typeof goTo === 'function') { goTo('scr-000'); }
 });
 /* Also init immediately in case DOMContentLoaded already fired */
 (function(){ 
