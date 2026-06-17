@@ -7129,6 +7129,61 @@ function debt013Proceed() {
 }
 
 
+
+
+/* ════════════════════════════════════════════════════════════
+   DZDEMO — DEMO AUTO-FILL (self-contained, non-invasive)
+   Fills login + OTP fields with demo values so any user can
+   sign in with a single tap. Set enabled:false to disable.
+   ════════════════════════════════════════════════════════════ */
+var DZDEMO = {
+  enabled : true,
+  civilId : '299010112345',
+  mobile  : '+965 5000 4821',
+  password: '123456',
+  otp     : '123456'
+};
+(function(){
+  if(!DZDEMO || !DZDEMO.enabled) return;
+  function setVal(id, val){
+    var el = document.getElementById(id);
+    if(!el) return false;
+    if(el.value) return true;            /* respect any existing input */
+    el.value = val;
+    el.classList.add('filled');
+    try{ el.dispatchEvent(new Event('input', {bubbles:true})); }catch(e){}
+    return true;
+  }
+  function fillLogin(){
+    setVal('retCivilId',  DZDEMO.civilId);
+    setVal('retPassword', DZDEMO.password);
+    setVal('newCivilId',  DZDEMO.civilId);
+    setVal('newMobile',   DZDEMO.mobile);
+  }
+  function fillOtp(){
+    var digits = String(DZDEMO.otp).split('');
+    var any = false;
+    for(var i=0;i<6;i++){
+      var box = document.getElementById('otp'+i);
+      if(!box) return;
+      if(!box.value){ box.value = digits[i] || ''; box.classList.add('filled'); any = true; }
+    }
+    if(any && typeof checkAllFilled === 'function'){ try{ checkAllFilled(); }catch(e){} }
+  }
+  /* Poll lightly: fields appear after splash auto-nav and tab switches. */
+  var ticks = 0;
+  var iv = setInterval(function(){
+    ticks++;
+    fillLogin();
+    fillOtp();
+    if(ticks > 120) clearInterval(iv);   /* ~60s safety cap */
+  }, 500);
+  /* Also fill immediately if DOM already ready. */
+  if(document.readyState !== 'loading'){ fillLogin(); fillOtp(); }
+  else document.addEventListener('DOMContentLoaded', function(){ fillLogin(); fillOtp(); });
+})();
+/* ════════════ end DZDEMO ════════════ */
+
 </script>
 
 <script>
